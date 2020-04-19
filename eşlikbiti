@@ -1,0 +1,20 @@
+--CANSEL BEKTAS 365261
+
+Library IEEE;
+use IEEE.std_logic_1164.all;
+
+Entity eslikbiti is
+   Port (  giris : in std_logic_vector(6 downto 0);
+           cikis : out std_logic_vector(7 downto 0));
+           
+  end entity;
+    
+    
+architecture mimari of eslikbiti is
+  signal eslik : std_logic;
+  Begin 
+    
+    eslik <= giris(0) xor giris(0) xor giris(1) xor giris(2) xor giris(3) xor giris(4) xor giris(5) xor giris(6);
+    cikis <= giris & eslik;
+    
+  end mimari;
